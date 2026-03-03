@@ -2,15 +2,139 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}{% endblock %}
-    </title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{% block title %}Chai Wala{% endblock %}</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body>
-    <nav> THIS IS NAVBAR </nav>
-    {% block content %}{% endblock %}
+
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="bg-orange-500 text-white shadow-xl">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+<div class="text-2xl font-bold">
+☕ Chai Wala
+</div>
+
+<div class="hidden md:flex space-x-8 text-lg">
+<a href="#" class="hover:text-black transition">Home</a>
+<a href="#" class="hover:text-black transition">Menu</a>
+<a href="#" class="hover:text-black transition">About</a>
+<a href="#" class="bg-white text-orange-500 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition">
+Order
+</a>
+</div>
+
+<button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
+
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="hidden md:hidden bg-orange-600 px-6 py-4 space-y-3">
+<a href="#" class="block">Home</a>
+<a href="#" class="block">Menu</a>
+<a href="#" class="block">About</a>
+<a href="#" class="block">Order</a>
+</div>
+
+</nav>
+
+
+<!-- ================= HERO SECTION ================= -->
+<section class="text-center py-24 bg-gradient-to-r from-orange-400 to-yellow-500 text-white">
+
+<h1 class="text-6xl font-extrabold mb-6">
+Premium Chai Experience
+</h1>
+
+<p class="text-xl max-w-3xl mx-auto mb-8">
+We serve high quality handmade chai with fresh ingredients,
+traditional taste and modern service for everyone.
+</p>
+
+<button class="bg-white text-orange-600 px-8 py-3 rounded-full font-bold
+hover:bg-black hover:text-white transition duration-300">
+Explore Menu
+</button>
+
+</section>
+
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="container mx-auto p-10 flex-grow">
+
+{% block content %}
+
+<!-- ABOUT SECTION -->
+<section class="bg-white p-10 rounded-3xl shadow-xl">
+
+<h2 class="text-4xl font-bold text-orange-600 mb-4">
+About Our Chai
+</h2>
+
+<p class="text-gray-700 text-lg leading-relaxed">
+Our chai is prepared using premium tea leaves,
+fresh milk, natural spices and traditional Nepalese methods.
+We believe tea is not just a drink — it is an emotion,
+a conversation and a lifestyle.
+</p>
+
+</section>
+
+
+<!-- COMING SOON SECTION -->
+<section class="mt-20 text-center">
+
+<h2 class="text-5xl font-extrabold text-gray-800">
+Coming Soon
+</h2>
+
+<p class="text-xl text-gray-600 mt-4">
+🚀 Online Ordering System  
+🛒 Add to Cart  
+💳 Online Payment  
+📦 Delivery Tracking  
+🔥 Mobile App Integration
+</p>
+
+<div class="mt-10">
+<div class="animate-pulse text-orange-600 text-3xl font-bold">
+Launching Soon...
+</div>
+</div>
+
+</section>
+
+{% endblock %}
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-white text-center py-6 mt-20">
+
+<p>
+© 2026 Chai Wala | Made with ❤️ by Mahesh
+</p>
+
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+<script>
+
+function toggleMenu() {
+let menu = document.getElementById("mobileMenu");
+menu.classList.toggle("hidden");
+}
+
+</script>
+
 </body>
 </html>
