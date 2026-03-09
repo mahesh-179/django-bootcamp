@@ -1,0 +1,51 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: white;
+    font-size: 18px;
+    border-radius: 12px; /* rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* shadow for box effect */
+    overflow: hidden;
+}
+
+th, td {
+    border-bottom: 1px solid #ccc;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    color: white;
+    font-size: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+/* Optional: remove last border-bottom for the last row */
+tbody tr:last-child td {
+    border-bottom: none;
+}

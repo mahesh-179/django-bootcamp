@@ -4,10 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+    <title>Student Details</title>
 </head>
 <body>
-    <h1> WORKING PROPERLY </h1>
+
+<h1>STUDENTS DETAILS</h1>
+
+{% if students %}
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Rank</th>
+            <th>College</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.sno }}</td>
+            <td>{{ student.sname }}</td>
+            <td>{{ student.eadd }}</td>
+            <td>{{ student.erank }}</td>
+            <td>{{ student.ecoll }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No students found.</p>
+{% endif %}
+
 </body>
 </html>
