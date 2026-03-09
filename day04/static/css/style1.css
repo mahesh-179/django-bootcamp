@@ -1,0 +1,187 @@
+/* =========================
+GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f6fb;
+    color:#333;
+    line-height:1.6;
+}
+
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+    background:#111;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#4f46e5;
+}
+
+
+/* =========================
+HERO SECTION
+========================= */
+
+.hero{
+    height:300px;
+    background:linear-gradient(135deg,#4f46e5,#6366f1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:36px;
+    font-weight:bold;
+}
+
+
+/* =========================
+PROJECT SECTION
+========================= */
+
+.projects{
+    padding:60px 10%;
+}
+
+.projects h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:30px;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+}
+
+.project-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.project-card h3{
+    padding:15px;
+}
+
+
+/* =========================
+ABOUT SECTION
+========================= */
+
+.about{
+    padding:60px 15%;
+    text-align:center;
+}
+
+.about h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.about p{
+    font-size:18px;
+    color:#555;
+}
+
+
+/* =========================
+CONTACT SECTION
+========================= */
+
+.contact{
+    padding:60px 15%;
+    text-align:center;
+}
+
+.contact h1{
+    margin-bottom:30px;
+}
+
+.contact form{
+    max-width:500px;
+    margin:auto;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact textarea{
+    height:120px;
+}
+
+.contact button{
+    padding:12px 25px;
+    border:none;
+    background:#4f46e5;
+    color:white;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.contact button:hover{
+    background:#3730a3;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111;
+    color:white;
+    margin-top:50px;
+}
+
+footer p{
+    margin:8px 0;
+}
+
+footer hr{
+    margin:15px 0;
+    border:0.5px solid #444;
+}
