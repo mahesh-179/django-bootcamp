@@ -5,43 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Tea House{% endblock %}</title>
-
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
 
 <!-- Navbar -->
-<header>
-    <nav>
-        <h2 class="logo">MaheshChai Wala</h2>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/menu/">Menu</a></li>
-            <li><a href="/about/">About</a></li>
-            <li><a href="/contact/">Contact</a></li>
+<header style="background:linear-gradient(90deg,#4e342e,#3e2723); padding:18px 60px; box-shadow:0 3px 10px rgba(0,0,0,0.2);">
+    <nav style="display:flex; justify-content:space-between; align-items:center;">
+        <h2 style="color:#ffcc80; font-size:24px; font-weight:600; letter-spacing:1px;">MaheshChai Wala</h2>
+        <ul style="list-style:none; display:flex; gap:35px;">
+            <li><a href="/" style="text-decoration:none; color:white; font-size:16px; position:relative; transition:0.3s;">Home</a></li>
+            <li><a href="{% url 'menu' %}" style="text-decoration:none; color:white; font-size:16px; position:relative; transition:0.3s;">Menu</a></li>
+            <li><a href="{% url 'about' %}" style="text-decoration:none; color:white; font-size:16px; position:relative; transition:0.3s;">About</a></li>
+            <li><a href="/contact/" style="text-decoration:none; color:white; font-size:16px; position:relative; transition:0.3s;">Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<!-- Hero Section -->
-<section class="hero">
-    {% block hero %}
-    <h1>Welcome to Chai Wala</h1>
-    <p>Freshly brewed tea made with love.</p>
-    <a href="/menu/" class="btn">View Menu</a>
-    {% endblock %}
-</section>
-
 <!-- Main Content -->
 <main>
     {% block content %}
-    
     {% endblock %}
 </main>
 
 <!-- Footer -->
-<footer>
-    <p>© 2026 Chai Wala Cafe</p>
+<footer style="background:#3e2723; color:white; text-align:center; padding:25px; margin-top:50px;">
+    <p>© 2026 MaheshChai Wala Cafe</p>
 </footer>
 
 </body>

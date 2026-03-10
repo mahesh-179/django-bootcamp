@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}About Me - Chai Wala{% endblock %}
+
+{% block content %}
+<section style="background: #fff3e6; color: #4e342e; padding: 60px 20px; font-family: 'Poppins', sans-serif; text-align: center; min-height: 80vh;">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
+        
+        <!-- Image -->
+        <div style="flex: 1 1 300px; padding: 20px;">
+            <img src="{% static 'IMG_8315.jpg' %}" alt="Chai Wala" 
+                 style="width: 100%; max-width: 350px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+        </div>
+
+        <!-- Text -->
+        <div style="flex: 2 1 400px; padding: 20px; text-align: left;">
+            <h1 style="font-size: 2.5em; margin-bottom: 20px;">Hi, I'm Mahesh, Your Chai Wala ☕</h1>
+            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
+                Every cup I serve tells a story—of long mornings, cozy evenings, and the simple joys of life. 
+                From boiling the perfect tea leaves to adding that pinch of love, I put my heart in every sip. 
+            </p>
+            <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 30px;">
+                My dream is simple: to create a little corner of warmth where people can feel at home, 
+                share a smile, and savor the magic of a perfectly brewed chai.
+            </p>
+            <a href="{% url 'menu' %}" style="display: inline-block; background: #d84315; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 500; transition: 0.3s;">
+                Explore Menu
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
