@@ -10,15 +10,17 @@
 #     chai=get_object_or_404(ChaiVariety,pk=chai_id)
 #     return render(request,"menu/confirmation.html",{'chai':chai})
 from django.shortcuts import render, get_object_or_404
-from .models import ChaiVariety,ChaiReview
+from .models import ChaiVariety,ChaiReview,Store
 
 # Display all menu items
 def menu(request):
     items = ChaiVariety.objects.all()
     reviews = ChaiReview.objects.all()
+    branches=Store.objects.all()
     context = {
         'items': items,
-        'reviews': reviews
+        'reviews': reviews,
+        'branches':branches,
     }
     return render(request, "menu/menu.html", context)
 
@@ -26,3 +28,10 @@ def menu(request):
 def order_confirmation(request, chai_id):
     chai = get_object_or_404(ChaiVariety, pk=chai_id)
     return render(request, "menu/confirmation.html", {'chai': chai})
+
+def store_location(request):
+     branches=Store.objects.all()
+     context = {
+        'branches':branches,
+    }
+     return render(request, "menu/location.html", context)
