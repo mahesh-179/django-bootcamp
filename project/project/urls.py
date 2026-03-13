@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tweets/',include("tweets.urls")),
+    path('', include('tweets.urls')),
 ]
 # Serve media files during development
 if settings.DEBUG:
