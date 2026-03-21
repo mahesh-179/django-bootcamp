@@ -15,43 +15,41 @@ def tweet_create(request):
     if request.method == "POST":
         form = TweetForm(request.POST, request.FILES)  # handle image upload
         if form.is_valid():
-            tweet = form.save(commit=False)  # get model instance
-            tweet.user = request.user        # assign logged-in user
+            tweet = form.save()  # get model instance
             tweet.save()
             return redirect('tweet_list')    # redirect after saving
     else:
         form = TweetForm()  # empty form for GET request
 
-    return render(request, 'tweets/tweet_list.html', {'form': form})
+    return render(request, 'tweets/tweet_form.html', {'form': form})
 
 def tweet_edit(request, tweet_id):
-    tweet = get_object_or_404(Tweet, pk=tweet_id, user=request.user)
+    tweet = get_object_or_404(Tweet, pk=tweet_id)
 
     if request.method == 'POST':
         form = TweetForm(request.POST, request.FILES, instance=tweet)
         if form.is_valid():
-            tweet = form.save(commit=False)
-            tweet.user = request.user
+            tweet = form.save()
             tweet.save()
             return redirect('tweet_list')
     else:
         form = TweetForm(instance=tweet)
 
-    return render(request, 'tweets/tweet_form.html', {'form': form})
+    return render(request, 'tweets/update.html', {'form': form})
          
 def tweet_delete(request, tweet_id):
-    tweet = get_object_or_404(Tweet, pk=tweet_id, user=request.user)
+    tweet = get_object_or_404(Tweet, pk=tweet_id)
 
     if request.method == 'POST':
         tweet.delete()
         return redirect('tweet_list')
-
-    return render(request, 'tweets/tweet_confirm.html', {'tweet': tweet})
+    return render(request,"tweets/tweet_confirm.html",{'tweet':tweet})
 
 def tweet_list(request):
     tweets = Tweet.objects.all()
     print("TOTAL:", tweets.count())
     return render(request, 'tweets/tweet_list.html', {'tweets': tweets})
+
 
 
     
